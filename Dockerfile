@@ -25,8 +25,8 @@ FROM node:16.15.0-alpine as Runner
 WORKDIR /app
 
 # copy in all the files needed to run
-COPY /app/package.json ./package.json
-# COPY /app/.env .env
+COPY ./package.json ./package.json
+# COPY ./.env .env
 COPY --from=Deps /app/node_modules/ node_modules/
 COPY --from=Builder /app/dist/ dist/
 
