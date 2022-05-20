@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  },
+  "include": ["src"]
+}

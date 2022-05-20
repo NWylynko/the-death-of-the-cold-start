@@ -1,0 +1,35 @@
+{
+  "name": "base-node",
+  "engine": {
+    "node": "16.15.0"
+  },
+  "packageManager": "yarn@3.2.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "start": "node dist",
+    "dev": "nodemon src/index.ts",
+    "lint": "eslint",
+    "test": "tsc --project tsconfig.tests.json && jest dist --coverage"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/node": "^16",
+    "@types/source-map-support": "^0.5.4",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
