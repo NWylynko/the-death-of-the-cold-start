@@ -1,2 +1,7 @@
+import Fastify from "fastify";
 
-export const app = () => "Hello World";
+import { mainHandlers } from "./endpoints/main";
+
+export const app = Fastify({ logger: true });
+
+app.register(mainHandlers);
