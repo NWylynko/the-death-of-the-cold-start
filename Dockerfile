@@ -34,4 +34,4 @@ COPY --from=Builder /app/dist/ dist/
 EXPOSE 4000
 ENV NODE_ENV=production
 
-CMD ["yarn", "start"]
+CMD ["node", "dist"]
