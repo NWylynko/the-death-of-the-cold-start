@@ -13,6 +13,7 @@
     "test": "tsc --project tsconfig.tests.json && jest dist --coverage"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "fastify": "^3.29.0",
     "source-map-support": "^0.5.21"
