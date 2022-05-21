@@ -20,6 +20,15 @@ COPY src/ src/
 # build the app
 RUN yarn build
 
+FROM node:16.15.0-alpine as Prod-Deps
+
+WORKDIR /app
+
+COPY --from=Builder /app .
+
+# this removes all the dev dependencies, only keeping the ones needed at run time
+RUN yarn workspaces focus --production
+
 FROM node:16.15.0-alpine as Runner
 
 WORKDIR /app
@@ -27,8 +36,8 @@ WORKDIR /app
 # copy in all the files needed to run
 COPY ./package.json ./package.json
 # COPY ./.env .env
-COPY --from=Deps /app/node_modules/ node_modules/
-COPY --from=Builder /app/dist/ dist/
+COPY --from=Prod-Deps /app/node_modules/ node_modules/
+COPY --from=Prod-Deps /app/dist/ dist/
 
 # expose ports the service / app listens on
 EXPOSE 4000
